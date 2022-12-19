@@ -22,7 +22,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextArea screenTextArea;
     
-    private int targetNumber = (int)(Math.random()*10%20)+1;
+    private int targetNumber = (int)(Math.random()*100 % 20) + 1;
     private int playTimes = 0;
     
     @Override
@@ -31,8 +31,8 @@ public class FXMLDocumentController implements Initializable {
     }
 
     public void buttonOnClicked(ActionEvent event){
+        System.out.println(targetNumber);
         try{
-            
             Button clickedButton = (Button)event.getSource();
             switch(clickedButton.getId()){
                 case "guessButton":
@@ -52,7 +52,7 @@ public class FXMLDocumentController implements Initializable {
                     }
                     break;
                 case "newGameButton":
-                    targetNumber = (int)(Math.random()*10%20)+1;
+                    targetNumber = (int)(Math.random()*100 % 20) + 1;
                     playTimes = 0;
                     screenTextArea.clear();
                     break;
